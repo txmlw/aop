@@ -1,18 +1,18 @@
 package proxy.imp;
 
 public interface AnimalInterface {
-	//ÉèÖÃÃû×Ö
+	//è®¾ç½®åå­—
 	void setName(String name);
-	//»ñÈ¡Ãû×Ö
+	//è·å–åå­—
 	String getName();
-	//½ĞÉù
+	//å«å£°
 	void bark();
 
-	//³Ô¶«Î÷
+	//åƒä¸œè¥¿
 	void eating();
 
-	//»ñÈ¡ÊôĞÔ
+	//è·å–å±æ€§
 	void getProperty();
-	//ÉèÖÃÊôĞÔ
+	//è®¾ç½®å±æ€§
 	void setProperty(String Property);
 }

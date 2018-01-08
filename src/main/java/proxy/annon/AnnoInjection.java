@@ -7,15 +7,15 @@ public class AnnoInjection {
 
 	public static Object getBean(Object obj) {
 		try {
-			// »ñµÃÀàÊôĞÔ
+			// è·å¾—ç±»å±æ€§
 			Field f[] = obj.getClass().getDeclaredFields();
-			// ±éÀúÊôĞÔ
+			// éå†å±æ€§
 			for (Field ff : f) {
-				// »ñµÃÊôĞÔÉÏµÄ×¢½â
+				// è·å¾—å±æ€§ä¸Šçš„æ³¨è§£
 				Animal s = ff.getAnnotation(Animal.class);
 				if (s != null) {
-					System.err.println("×¢Èë" + ff.getName() + "ÊôĞÔ" + "\t\t" + s.value());
-					// ·´Éäµ÷ÓÃpublic set·½·¨,Èç¹ûÎª·ÃÎÊ¼¶±ğprivate,ÄÇÃ´¿ÉÒÔÖ±½ÓÊ¹ÓÃÊôĞÔµÄset(obj,
+					System.err.println("æ³¨å…¥" + ff.getName() + "å±æ€§" + "\t\t" + s.value());
+					// åå°„è°ƒç”¨public setæ–¹æ³•,å¦‚æœä¸ºè®¿é—®çº§åˆ«private,é‚£ä¹ˆå¯ä»¥ç›´æ¥ä½¿ç”¨å±æ€§çš„set(obj,
 					// value);
 					obj.getClass()
 							.getMethod("set" + ff.getName().substring(0, 1).toUpperCase() + ff.getName().substring(1),
@@ -23,13 +23,13 @@ public class AnnoInjection {
 							.invoke(obj, s.value());
 				}
 			}
-			// »ñµÃËùÓĞ·½·¨
+			// è·å¾—æ‰€æœ‰æ–¹æ³•
 			Method m[] = obj.getClass().getDeclaredMethods();
 			for (Method mm : m) {
-				// »ñµÃ·½·¨×¢½â
+				// è·å¾—æ–¹æ³•æ³¨è§£
 				Animal s = mm.getAnnotation(Animal.class);
 				if (s != null) {
-					System.err.println("×¢Èë" + mm.getName() + "·½·¨" + "\t" + s.Property());
+					System.err.println("æ³¨å…¥" + mm.getName() + "æ–¹æ³•" + "\t" + s.Property());
 					mm.invoke(obj, s.Property());
 				}
 			}

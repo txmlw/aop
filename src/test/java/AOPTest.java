@@ -13,25 +13,25 @@ public class AOPTest {
 	public static void main(String[] args) {
 
 		AnimalInterface dog = AnimalFactory.getAnimal( DogImp.class, new AOPMethod() {
-			// ÕâÀïĞ´·½·¨Ö´ĞĞÇ°µÄAOPÇĞÈë·½·¨
+			// è¿™é‡Œå†™æ–¹æ³•æ‰§è¡Œå‰çš„AOPåˆ‡å…¥æ–¹æ³•
 			public void before(Object proxy, Method method, Object[] args) {
 				if (method.getName().equals("getProperty")) {
-					System.err.println("³É¹¦À¹½Ø" + method.getName() + "·½·¨,Æô¶¯");
+					System.err.println("æˆåŠŸæ‹¦æˆª" + method.getName() + "æ–¹æ³•,å¯åŠ¨");
 				}
 			}
 
-			// ÕâÀïÏµ·½·¨Ö´ĞĞºóµÄAOPÇĞÈë·½·¨
+			// è¿™é‡Œç³»æ–¹æ³•æ‰§è¡Œåçš„AOPåˆ‡å…¥æ–¹æ³•
 			public void after(Object proxy, Method method, Object[] args) {
 				if (method.getName().equals("getProperty"))
-					System.err.println("³É¹¦À¹½Ø" + method.getName() + "·½·¨,½áÊø");
+					System.err.println("æˆåŠŸæ‹¦æˆª" + method.getName() + "æ–¹æ³•,ç»“æŸ");
 
 			}
 		});
 		dog.bark();
-		String name = "¶¯ÎïµÄÃû×ÖÊÇ" + dog.getName();
+		String name = "åŠ¨ç‰©çš„åå­—æ˜¯" + dog.getName();
 		System.out.println(name);
-		dog.setName("¶ş¹·×Ó");
-		name = "ÎÒµÄÃû×ÖÊÇ" + dog.getName();
+		dog.setName("äºŒç‹—å­");
+		name = "æˆ‘çš„åå­—æ˜¯" + dog.getName();
 		System.out.println(name);
 		dog.getProperty();
 		dog.eating();

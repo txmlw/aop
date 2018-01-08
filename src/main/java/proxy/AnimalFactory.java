@@ -8,19 +8,19 @@ import java.lang.reflect.Proxy;
 public class AnimalFactory {
 
 	/***
-	 * 获取对象方法
+	 * 鑾峰彇瀵硅薄鏂规硶
 	 * @param obj
 	 * @return
 	 */
 	private static Object getAnimalBase(Object obj, AOPMethod method){
-		//获取代理对象
+		//鑾峰彇浠ｇ悊瀵硅薄
 		return Proxy.newProxyInstance(obj.getClass().getClassLoader(),
-				obj.getClass().getInterfaces(), 
+				obj.getClass().getInterfaces(),
 				new AOPHandle( AnnoInjection.getBean(obj),method));
 	}
-	
+
 	/***
-	 * 获取对象方法
+	 * 鑾峰彇瀵硅薄鏂规硶
 	 * @param obj
 	 * @return
 	 */
@@ -28,7 +28,7 @@ public class AnimalFactory {
 		return (T) getAnimalBase(obj,aopMethod);
 	}
 	/***
-	 * 获取对象方法
+	 * 鑾峰彇瀵硅薄鏂规硶
 	 * @param className
 	 * @return
 	 */
@@ -43,7 +43,7 @@ public class AnimalFactory {
 	}
 
 	/***
-	 * 获取对象方法
+	 * 鑾峰彇瀵硅薄鏂规硶
 	 * @param clz
 	 * @return
 	 */

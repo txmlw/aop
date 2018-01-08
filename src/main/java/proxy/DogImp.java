@@ -29,7 +29,7 @@ public class DogImp implements AnimalInterface {
 	}
 
 	@Override
-	@Animal(Property = "¹·ÅÙ")
+	@Animal(Property = "ç‹—åˆ¨")
 	public void setProperty(String Property) {
 		this.Property = Property;
 	}
@@ -41,6 +41,6 @@ public class DogImp implements AnimalInterface {
 
 	@Override
 	public void eating() {
-		System.out.println("ÎÒÕıÔÚ³Ô"+this.Property);
+		System.out.println("æˆ‘æ­£åœ¨åƒ"+this.Property);
 	}
 }

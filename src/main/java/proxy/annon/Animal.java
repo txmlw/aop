@@ -7,9 +7,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface Animal {
-	
-	public String value() default "Íú²Æ";
-	
-	public String Property() default "ÎÞÊôÐÔ";
-	
+
+	public String value() default "æ—ºè´¢";
+
+	public String Property() default "æ— å±žæ€§";
+
 }
